@@ -1,4 +1,4 @@
-const { jumbleWord } = require('../main')
+const { jumbleWord } = require('../translate')
 
 var assert = require('assert');
 
