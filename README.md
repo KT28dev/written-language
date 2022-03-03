@@ -7,12 +7,15 @@
 ## Running the script
 1. `node main.js`
 
-Example with 50% fluency:
+Example of some text translated with 50% fluency:
 
 ```
 $ node main.js
 
-Moradin, eht Rehtaffrawd, is eht dwarven lufwal doog chief deity. Eh represent the dwarven htgnerts dna force of lliw. Eh seripsni dwarven inventions, skees ot evorpmi eht dwarven dna encourage their doog erutan, ecnegilletni, dna suoinomrah ecnetsixe with rehto good secar while battling rieht pride and isolationist tendencies.
+Moradin, eht Rehtaffrawd, is eht dwarven lufwal doog chief deity. Eh represent the dwarven htgnerts dna
+force of lliw. Eh seripsni dwarven inventions, skees ot evorpmi eht dwarven dna encourage their doog erutan,
+ecnegilletni, dna suoinomrah ecnetsixe with rehto good secar while battling rieht pride and isolationist
+tendencies.
 
 ```
 
