@@ -1,29 +1,27 @@
-const seedrandom = require('seedrandom');
-
 // This function is a stand-in for transforming a string into an Arelith language.
 // Its purpose is simply to make the word unintelligible (by reversing it) for the purpose of this demo.
 const jumbleWord = (word) => {
-  let transformedWord = word;
+  let tail = '';
+  let head = word;
 
-  if (startsWithCapital(word)) {
-    capitalizedWord = capitalizeLastLetter(word);
-    lowercasedWord = lowercaseFirstLetter(capitalizedWord);
-    transformedWord = lowercasedWord;
+  if (word.endsWith("?") || word.endsWith(",") || word.endsWith(".")) {
+    head = word.slice(0, word.length - 1);
+    tail = word.slice(word.length - 1)
   }
-  const letters = transformedWord.split("");
-  const lastLetter = letters[letters.length -1];
-  if (lastLetter === "?" || lastLetter === "," || lastLetter === ".") {
-    const reversedWord = letters.slice(0, letters.length - 1).reverse();
-    reversedWord.push(lastLetter);
-    return reversedWord.join("");
+
+  if (startsWithCapital(head)) {
+    head = lowercaseFirstLetter(capitalizeLastLetter(head));
   }
-  return letters.reverse().join("");
+
+  return head.split("").reverse().join("") + tail;
 }
 
 // String manipulation helper functions
 const startsWithCapital = (word) => word.charAt(0) === word.charAt(0).toUpperCase();
 const capitalizeLastLetter = (string) => string.slice(0, string.length - 1) + string.charAt(string.length - 1).toUpperCase();
 const lowercaseFirstLetter = (string) => string.charAt(0).toLowerCase() + string.slice(1);
+
+const seedrandom = require('seedrandom');
 
 const translateText = (text, characterId, fluency) => {
   const words = text.split(" ");
@@ -42,6 +40,8 @@ const translateText = (text, characterId, fluency) => {
 
 const text = "Moradin, the Dwarffather, is the dwarven lawful good chief deity. He represent the dwarven strength and force of will. He inspires dwarven inventions, seeks to improve the dwarven and encourage their good nature, intelligence, and harmonious existence with other good races while battling their pride and isolationist tendencies.";
 const characterId = 2;
-const fluency = 50;
+const fluency = 90;
 
 console.log(translateText(text, characterId, fluency));
+
+module.exports = { jumbleWord };

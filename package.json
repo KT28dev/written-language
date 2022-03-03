@@ -6,9 +6,11 @@
   "dependencies": {
     "seedrandom": "^3.0.5"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "mocha": "^9.2.1"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "author": "",
   "license": "ISC"
