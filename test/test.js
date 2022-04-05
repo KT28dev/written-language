@@ -12,7 +12,7 @@ describe('translateText', () => {
 
   describe('partial fluency', () => {
     it('should jumble some of the words', () => {
-      assert.equal(translateText(text, 1, 50), "Moradin, eht Dwarffather, si the dwarven lawful good feihc deity.")
+      assert.equal(translateText(text, 1, 50), "Moradin, eht Rehtaffrawd, is eht nevrawd lawful doog chief deity.")
     })
 
     it('should jumble different words for different characters', () => {
@@ -24,10 +24,10 @@ describe('translateText', () => {
     it('translates additional words as fluency increases and there is no regression of comprehension', () => {
       const translateForFluency = (fluency) => translateText(text, 1, fluency);
 
-      assert.equal(translateForFluency(10), "Nidarom, eht Rehtaffrawd, si the dwarven lufwal doog feihc ytied.")
-      assert.equal(translateForFluency(20), "Moradin, eht Rehtaffrawd, si the dwarven lawful doog feihc ytied.")
-      assert.equal(translateForFluency(40), "Moradin, eht Dwarffather, si the dwarven lawful good feihc deity.")
-      assert.equal(translateForFluency(60), "Moradin, the Dwarffather, si the dwarven lawful good feihc deity.")
+      assert.equal(translateForFluency(10), "Nidarom, eht Rehtaffrawd, si eht nevrawd lufwal doog chief ytied.")
+      assert.equal(translateForFluency(20), "Nidarom, eht Rehtaffrawd, is eht nevrawd lufwal doog chief ytied.")
+      assert.equal(translateForFluency(40), "Moradin, eht Rehtaffrawd, is eht nevrawd lufwal doog chief ytied.")
+      assert.equal(translateForFluency(60), "Moradin, eht Dwarffather, is eht nevrawd lawful good chief deity.")
       assert.equal(translateForFluency(80), "Moradin, the Dwarffather, is the dwarven lawful good chief deity.")
     })
   })

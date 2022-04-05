@@ -28,8 +28,9 @@ const translateText = (text, characterId, fluency) => {
   // Randomization seed is generated from the characterId and the note's text.
   // This ensures the same PC will understand the same random sequence of words each time they attempt to read.
   // Seed uses the text of the note itself (or in the future, a hash generated from the text) to ensure the PC understands a different random sequence of words for each unique note.
-  const rng = seedrandom(`${characterId}-${text}`);
+
   const translatedWords = words.map((word) => {
+    const rng = seedrandom(`${characterId}-${word}`);
     const randomNumber = rng() * 100;
 
     return randomNumber > fluency ? jumbleWord(word) : word;
